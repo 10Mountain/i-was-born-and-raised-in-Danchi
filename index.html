@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <div id="rotateOverlay">
+        <div style="font-size: 50px;">📱➡️</div>
+        <p>Please rotate your device<br>to landscape mode</p>
+    </div>
     <div id="container">
         <canvas id="gameCanvas"></canvas>
         <div id="startScreen">Click to Start</div>
@@ -28,6 +32,15 @@
     <script src="enemy.js"></script>
     <script src="sound.js"></script>
     <script src="main.js"></script>
+    <script>
+        // Restart button logic
+        const restartBtn = document.getElementById('restartBtn');
+        restartBtn.addEventListener('click', () => {
+            // We can reload the page or reset the game state
+            // Since main.js handles restart logic via Enter key, we can expose a global restart function or just reload
+            location.reload();
+        });
+    </script>
 </body>
 
 </html>

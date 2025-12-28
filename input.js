@@ -42,8 +42,10 @@ class InputHandler {
             };
             btn.addEventListener('touchstart', start);
             btn.addEventListener('touchend', end);
+            btn.addEventListener('touchcancel', end); // Handle interruption
             btn.addEventListener('mousedown', start);
             btn.addEventListener('mouseup', end);
+            btn.addEventListener('mouseleave', end); // Handle dragging out
         };
 
         addTouchListener(btnLeft, 'ArrowLeft');
