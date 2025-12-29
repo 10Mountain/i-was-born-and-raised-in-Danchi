@@ -1,15 +1,15 @@
 class Player {
     constructor(game) {
         this.game = game;
-        this.width = 100; // Adjusted for sprite size
-        this.height = 100;
+        this.width = 70; // Scaled for iPhone 17 (100 * 0.7)
+        this.height = 70;
         this.x = 100;
         this.y = this.game.height - this.height - this.game.groundMargin;
         this.vy = 0;
-        this.weight = 1;
-        this.jumpStrength = 24;
+        this.weight = 0.7; // Scaled gravity
+        this.jumpStrength = 17; // Scaled jump
         this.speed = 0;
-        this.maxSpeed = 6;
+        this.maxSpeed = 5; // Slightly reduced speed
         this.image = new Image();
         this.image.src = 'assets/character_single.png';
 
@@ -78,7 +78,7 @@ class Player {
     }
 
     draw(ctx) {
-        if (this.image.complete) {
+        if (this.image.complete && this.image.naturalWidth > 0) {
             ctx.save(); // Save current canvas state
 
             // Move pivot to center of player for rotation

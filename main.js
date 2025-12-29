@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
         constructor(width, height) {
             this.width = width;
             this.height = height;
-            this.groundMargin = 50;
+            this.groundMargin = 40;
             this.speed = 3;
             this.background = new Background(this);
             this.player = new Player(this);
@@ -28,9 +28,9 @@ window.addEventListener('load', function () {
 
         addPlatforms() {
             // Add some test platforms
-            this.platforms.push(new Platform(this, 300, 400, 200, 20));
-            this.platforms.push(new Platform(this, 600, 300, 200, 20));
-            this.platforms.push(new Platform(this, 900, 450, 200, 20));
+            this.platforms.push(new Platform(this, 200, 280, 140, 14));
+            this.platforms.push(new Platform(this, 450, 210, 140, 14));
+            this.platforms.push(new Platform(this, 700, 315, 140, 14));
         }
 
         update(deltaTime) {
@@ -67,9 +67,9 @@ window.addEventListener('load', function () {
             if (this.platforms.length > 0) {
                 let lastPlatform = this.platforms[this.platforms.length - 1];
                 if (lastPlatform.x < this.width) {
-                    let x = this.width + 100 + Math.random() * 200;
-                    let y = Math.random() * (this.height - 200 - this.groundMargin) + 100;
-                    this.platforms.push(new Platform(this, x, y, 200, 20));
+                    let x = this.width + 70 + Math.random() * 140;
+                    let y = Math.random() * (this.height - 140 - this.groundMargin) + 70;
+                    this.platforms.push(new Platform(this, x, y, 140, 14));
                 }
             }
 
@@ -176,6 +176,7 @@ window.addEventListener('load', function () {
 
     function animate(timeStamp) {
         if (!gameStarted) return;
+        // console.log('Animating...');
         const deltaTime = timeStamp - lastTime;
         lastTime = timeStamp;
 

@@ -37,10 +37,10 @@ class Enemy {
 class GroundEnemy extends Enemy {
     constructor(game) {
         super(game);
-        this.width = 100;
-        this.height = 60; // Slightly taller for cuteness
+        this.width = 70;
+        this.height = 42; // Scaled 60 * 0.7
         this.x = this.game.width;
-        this.y = this.game.height - this.height - this.game.groundMargin + 20; // Lowered to sit on ground
+        this.y = this.game.height - this.height - this.game.groundMargin + 10; // offset to fix floating
         this.image = new Image();
         this.image.src = 'assets/enemy_car.png';
         this.speedX = 0; // Ground enemy moves with the ground
@@ -97,11 +97,11 @@ class GroundEnemy extends Enemy {
 class FlyingEnemy extends Enemy {
     constructor(game) {
         super(game);
-        this.width = 60;
-        this.height = 40;
+        this.width = 42;
+        this.height = 28;
         this.x = this.game.width + Math.random() * this.game.width * 0.5;
         this.y = Math.random() * this.game.height * 0.5;
-        this.speedX = Math.random() * 2 + 1; // 1 to 3 speed
+        this.speedX = Math.random() * 1.5 + 1; // Scaled speed
         this.speedY = 0;
         this.angle = 0;
         this.va = Math.random() * 0.1 + 0.1;

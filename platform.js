@@ -30,7 +30,7 @@ class Platform {
     draw(ctx) {
         // Utility Pole Look
 
-        const poleWidth = 20;
+        const poleWidth = 14; // Scaled 20 * 0.7
         const poleX = this.x + this.width / 2 - poleWidth / 2;
         const groundY = this.game.height - this.game.groundMargin;
 
