@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Danchi Runner</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,8 +16,11 @@
     </div>
     <div id="container">
         <canvas id="gameCanvas"></canvas>
-        <div id="startScreen">Click to Start</div>
-        <div id="restartBtn">Restart</div>
+        <div id="startScreen">
+            <img src="assets/title_screen.jpg" alt="Title Screen" id="titleImage">
+            <div id="startText">CLICK TO START</div>
+        </div>
+        <button id="restartBtn">RESTART</button>
         <div id="controls">
             <div>
                 <button id="btnLeft">←</button>
